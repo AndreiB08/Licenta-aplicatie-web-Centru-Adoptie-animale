@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDog } from "@fortawesome/free-solid-svg-icons";
+import AIAdvice from "../../components/aiAdvice/aiAdvice.jsx";
 import 'swiper/css/bundle';
 import './home.css';
 
@@ -18,6 +21,7 @@ const Home = () => {
 	const images = [caine1, pisica1, caine3, papagal];
 	const navigate = useNavigate();
 	const role = localStorage.getItem("role");
+	const [showChat, setShowChat] = useState(false);
 
 	useEffect(() => {
 		if (role === "admin" || role === "staff") {
@@ -86,7 +90,23 @@ const Home = () => {
 
 				<img src={education} alt="Shelter rabbit" />
 			</div>
-		</div>
+			<button
+				className="floating-chat-button"
+				onClick={() => setShowChat(true)}
+			>
+				<FontAwesomeIcon icon={faDog} />
+			</button>
+			{
+				showChat && (
+					<div className="modal-overlay">
+						<div className="modal-box">
+							<button className="close-button" onClick={() => setShowChat(false)}>×</button>
+							<AIAdvice onClose={() => setShowChat(false)} />
+						</div>
+					</div>
+				)
+			}
+		</div >
 	);
 };
 
