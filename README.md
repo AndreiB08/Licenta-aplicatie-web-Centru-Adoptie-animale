@@ -53,17 +53,7 @@ git clone https://github.com/andrei-bz/licenta-adoptie-animale.git
 cd licenta-adoptie-animale
 ```
 
-### 2. Configurează baza de date
-
-1. Creează fișierul `.env`:
-
-```env
-PORT = 8080
-JWT_SECRET = my_secret_key
-GMAIL_USER = "andrei.buzagiu@gmail.com"
-GMAIL_PASS = "sygzampojxlmummk"
-OPENAI_API_KEY=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
-```
+### 2. Creează fișierul `.env`
 
 ### 3. Instalează dependențele
 
