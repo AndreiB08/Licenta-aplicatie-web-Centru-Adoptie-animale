@@ -1,6 +1,6 @@
 # Aplicație Web - Centru de Adopție Animale
 
-Acest proiect este realizat ca lucrare de licență și reprezintă o aplicație web completă pentru gestionarea unui centru de adopții pentru animale.
+Această aplicație este realizată ca lucrare de licență și reprezintă o aplicație web pentru gestionarea unui centru de adopții de animale.
 
 ---
 
@@ -39,7 +39,7 @@ Acest proiect este realizat ca lucrare de licență și reprezintă o aplicație
 ### Back-end:
 - Node.js + Express
 - Sequelize (ORM)
-- MySQL
+- SQLite
 - JWT pentru autentificare
 
 ---
@@ -55,14 +55,14 @@ cd licenta-adoptie-animale
 
 ### 2. Configurează baza de date
 
-1. Creează o bază de date MySQL (ex: `adoptie_animale`)
-2. Modifică datele de conectare în fișierul `.env`:
+1. Creează fișierul `.env`:
 
 ```env
-DB_NAME=adoptie_animale
-DB_USER=root
-DB_PASS=parola_ta
-JWT_SECRET=cheie_super_secreta
+PORT = 8080
+JWT_SECRET = my_secret_key
+GMAIL_USER = "andrei.buzagiu@gmail.com"
+GMAIL_PASS = "sygzampojxlmummk"
+OPENAI_API_KEY=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
 ```
 
 ### 3. Instalează dependențele
@@ -71,7 +71,7 @@ JWT_SECRET=cheie_super_secreta
 ```bash
 cd back-end
 npm install
-npm start
+npm run dev
 ```
 
 #### Pentru frontend:
@@ -88,11 +88,15 @@ npm run dev
 ```txt
 Admin:
 email: andrei.buzagiu@gmail.com
-parola: admin123
+parola: admin1234
 
 Staff:
 email: vladut.alexa@gmail.com
 parola: staff123
 ```
 
-> Se pot schimba în baza de date sau din interfață.
+> Se pot schimba din interfață.
+
+### 4. Paginile pentru staff
+
+> http://localhost:5173/login

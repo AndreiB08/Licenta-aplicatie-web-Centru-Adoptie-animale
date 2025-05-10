@@ -114,9 +114,9 @@ const Contact = () => {
             </Box>
 
             <div className="contact-info">
-                <p><strong>📍 Adresă:</strong> 123 Paw Street, Bucharest</p>
+                <p><strong>📍 Adresă:</strong> Piața Unirii, București, Romania</p>
                 <p><strong>📞 Program:</strong> +40 123 456 789</p>
-                <p><strong>✉️ Email:</strong> contact@adoptioncenter.ro</p>
+                <p><strong>✉️ Email:</strong> contact@centruadoptie.ro</p>
             </div>
         </div>
     );

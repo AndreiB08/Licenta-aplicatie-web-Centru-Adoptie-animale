@@ -9,9 +9,9 @@ const LocationPage = () => {
       Vino să ne vizitezi! Centrul nostru de adopție te așteaptă cu drag. 🐾
       </p>
       <div className="location-details">
-        <p><strong>Adresă:</strong> 123 Paw Street, Bucharest, Romania</p>
-        <p><strong>Program:</strong> Lu–Vi: 10:00 – 18:00</p>
-        <p><strong>Telefon:</strong> +40 123 456 789</p>
+        <p><strong>📍 Adresă:</strong> Piața Unirii, București, Romania</p>
+        <p><strong>🕒 Program:</strong> Lu–Vi: 10:00 – 18:00</p>
+        <p><strong>📞 Program:</strong> +40 123 456 789</p>
       </div>
       <div className="map-container">
         <iframe

@@ -8,8 +8,8 @@ const NotFound = () => {
 
   return (
     <div className="page not-found">
-      <h1>404 - Page not found</h1>
-      <p>We're sorry, but the page you're looking for doesn't exist.</p>
+      <h1>404 - Pagină negăsită</h1>
+      <p>Ne pare rău, dar pagina pe care o cauți nu există.</p>
       <div className="button-wrapper">
         <button
           className="btn btn-primary"
@@ -22,7 +22,7 @@ const NotFound = () => {
             }
           }}
         >
-          Go back to Home
+          Înapoi la pagina principală
         </button>
       </div>
     </div>

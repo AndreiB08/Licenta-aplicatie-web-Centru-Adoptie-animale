@@ -37,7 +37,7 @@ const PetModal = ({ open, handleClose, onSaved, initialData = null }) => {
             setForm(initialForm);
         }
         setErrors({});
-    }, [initialData]);    
+    }, [initialData]);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -103,8 +103,14 @@ const PetModal = ({ open, handleClose, onSaved, initialData = null }) => {
                     InputLabelProps={{ shrink: true }}
                 />
                 <FormControl fullWidth error={!!errors.species}>
-                    <InputLabel>Specie</InputLabel>
-                    <Select name="species" value={form.species} onChange={handleChange} label="Species">
+                    <InputLabel id="species-label">Specie</InputLabel>
+                    <Select
+                        labelId="species-label"
+                        name="species"
+                        value={form.species}
+                        onChange={handleChange}
+                        label="Specie"
+                    >
                         {Object.values(SPECIES).map((specie) => (
                             <MenuItem key={specie} value={specie}>{specie}</MenuItem>
                         ))}
@@ -116,8 +122,14 @@ const PetModal = ({ open, handleClose, onSaved, initialData = null }) => {
                 <TextField label="Vârstă" name="age" type="number" value={form.age} onChange={handleChange} error={!!errors.age} helperText={errors.age} fullWidth />
 
                 <FormControl fullWidth error={!!errors.gender}>
-                    <InputLabel>Gen</InputLabel>
-                    <Select name="gender" value={form.gender} onChange={handleChange} label="Gender">
+                    <InputLabel id="gender-label">Gen</InputLabel>
+                    <Select
+                        labelId="gender-label"
+                        name="gender"
+                        value={form.gender}
+                        onChange={handleChange}
+                        label="Gen"
+                    >
                         {Object.values(GENDERS).map((gender) => (
                             <MenuItem key={gender} value={gender}>{gender}</MenuItem>
                         ))}
@@ -126,8 +138,14 @@ const PetModal = ({ open, handleClose, onSaved, initialData = null }) => {
                 </FormControl>
 
                 <FormControl fullWidth error={!!errors.size}>
-                    <InputLabel>Dimensiune</InputLabel>
-                    <Select name="size" value={form.size} onChange={handleChange} label="Size">
+                    <InputLabel id="size-label">Dimensiune</InputLabel>
+                    <Select
+                        labelId="size-label"
+                        name="size"
+                        value={form.size}
+                        onChange={handleChange}
+                        label="Dimensiune"
+                    >
                         {Object.values(SIZES).map((size) => (
                             <MenuItem key={size} value={size}>{size}</MenuItem>
                         ))}
@@ -138,8 +156,14 @@ const PetModal = ({ open, handleClose, onSaved, initialData = null }) => {
                 <TextField label="Culoare" name="color" value={form.color} onChange={handleChange} error={!!errors.color} helperText={errors.color} fullWidth />
 
                 <FormControl fullWidth error={!!errors.health_status}>
-                    <InputLabel>Status sănătate</InputLabel>
-                    <Select name="health_status" value={form.health_status} onChange={handleChange} label="Health status">
+                    <InputLabel id="health-status-label">Status sănătate</InputLabel>
+                    <Select
+                        labelId="health-status-label"
+                        name="health_status"
+                        value={form.health_status}
+                        onChange={handleChange}
+                        label="Status sănătate"
+                    >
                         {Object.values(HEALTH_STATUSES).map((health_status) => (
                             <MenuItem key={health_status} value={health_status}>{health_status}</MenuItem>
                         ))}
@@ -148,8 +172,14 @@ const PetModal = ({ open, handleClose, onSaved, initialData = null }) => {
                 </FormControl>
 
                 <FormControl fullWidth error={!!errors.adoption_status}>
-                    <InputLabel>Status adopție</InputLabel>
-                    <Select name="adoption_status" value={form.adoption_status} onChange={handleChange} label="Adoption status">
+                    <InputLabel id="adoption-status-label">Status adopție</InputLabel>
+                    <Select
+                        labelId="adoption-status-label"
+                        name="adoption_status"
+                        value={form.adoption_status}
+                        onChange={handleChange}
+                        label="Status adopție"
+                    >
                         {Object.values(ADOPTION_STATUSES).map((adoption_status) => (
                             <MenuItem key={adoption_status} value={adoption_status}>{adoption_status}</MenuItem>
                         ))}

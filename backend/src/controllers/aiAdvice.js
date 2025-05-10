@@ -12,18 +12,18 @@ export const getPetCareAdvice = async (req, res) => {
     }
 
     try {
-        // TEMPORAR: mock response
-        const aiResponse = `Mock răspuns pentru mesaj (mă costă bani sunt sărăcie): "${message}"`;
-        res.json({ advice: aiResponse });
+        // TEMPORAR:
+        // const aiResponse = `Mock răspuns pentru mesaj (mă costă bani sunt sărăcie): "${message}"`;
+        // res.json({ advice: aiResponse });
 
         // ORIGINAL:
-        // const response = await openai.chat.completions.create({
-        //     model: "gpt-3.5-turbo",
-        //     messages: [{ role: "user", content: message }],
-        // });
+        const response = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: message }],
+        });
 
-        // const aiResponse = response.choices[0].message.content;
-        // res.json({ advice: aiResponse });
+        const aiResponse = response.choices[0].message.content;
+        res.json({ advice: aiResponse });
 
     } catch (error) {
         console.error("AI Chat Error:", error.message);

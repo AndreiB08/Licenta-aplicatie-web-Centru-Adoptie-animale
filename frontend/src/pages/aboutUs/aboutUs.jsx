@@ -61,7 +61,7 @@ const About = () => {
                         <h2>🐾 Salvare</h2>
                         <div className="section-content">
                             <img src={rescue} alt="Rescue" />
-                            <p>În fiecare zi, echipa noastră răspunde apelurilor despre animale aflate în pericol. Fie că sunt abandonate, rănite sau victime ale abuzului, intervenim pentru a le oferi ajutor imediat. Salvarea înseamnă mai mult decât relocare — înseamnă acțiune rapidă, empatie și șansa la o viață sigură. Vehiculele noastre de intervenție și personalul pregătit sunt gata să acționeze oriunde este nevoie.</p>
+                            <p>În fiecare zi, echipa noastră răspunde apelurilor despre animale aflate în pericol. Fie că sunt abandonate, rănite sau victime ale abuzului, intervenim pentru a le oferi ajutor imediat. Salvarea înseamnă mai mult decât relocare, înseamnă acțiune rapidă, empatie și șansa la o viață sigură. Vehiculele noastre de intervenție și personalul pregătit sunt gata să acționeze oriunde este nevoie.</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ const About = () => {
                 <h2>💙 Îngrijire</h2>
                 <div className="section-content reverse">
                     <img src={care} alt="Care" />
-                    <p>După salvare, animalele sunt evaluate de echipa noastră veterinară și primesc toate tratamentele necesare — de la vaccinuri până la intervenții chirurgicale. Sunt cazate în medii curate, adaptate speciei, primind hrană, căldură și sprijin emoțional. Specialiștii în comportament și voluntarii noștri lucrează răbdători pentru recuperarea completă a fiecărui animal.</p>
+                    <p>După salvare, animalele sunt evaluate de echipa noastră veterinară și primesc toate tratamentele necesare: de la vaccinuri până la intervenții chirurgicale. Sunt cazate în medii curate, adaptate speciei, primind hrană, căldură și sprijin emoțional. Specialiștii în comportament și voluntarii noștri lucrează răbdători pentru recuperarea completă a fiecărui animal.</p>
                 </div>
             </div>
 
@@ -110,7 +110,7 @@ const About = () => {
                 </div>
             </div>
 
-            <p className="closing-message">Îți mulțumim că faci parte din comunitatea noastră. Sprijinul tău — prin adopție, donație sau voluntariat — chiar face diferența. Împreună construim un viitor condus de compasiune.</p>
+            <p className="closing-message">Îți mulțumim că faci parte din comunitatea noastră. Sprijinul tău, prin adopție sau voluntariat, chiar face diferența. Împreună construim un viitor condus de compasiune.</p>
         </div>
     );
 };
