@@ -92,7 +92,7 @@ parola: admin1234
 
 Staff:
 email: vladut.alexa@gmail.com
-parola: staff123
+parola: staff1234
 ```
 
 > Se pot schimba din interfață.
