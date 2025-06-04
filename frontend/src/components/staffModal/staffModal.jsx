@@ -9,6 +9,7 @@ import {
   Button
 } from "@mui/material";
 import { SERVER_URL } from "../../constants/server_url";
+import { EMPLOYEE_ROLES } from "../../../../backend/src/constants/enums";
 
 const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [] }) => {
   const [formData, setFormData] = useState({
@@ -103,7 +104,7 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
       last_name: formData.last_name.trim(),
       email: formData.email,
       phone_number: formData.phone,
-      role: employee?.role || "staff",
+      role: employee?.role || EMPLOYEE_ROLES.ANGAJAT,
       password: "staff1234"
     };
 

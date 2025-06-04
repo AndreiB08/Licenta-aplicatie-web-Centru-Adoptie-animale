@@ -43,7 +43,7 @@ export const seedAnimals = async () => {
                 adoption_status: ADOPTION_STATUSES.DISPONIBIL,
                 arrival_date: "2024-11-15",
                 notes: "Adoră să fie alintată și are o personalitate jucăușă.",
-                image: "https://cdn-aahmh.nitrocdn.com/mwIJloVUffDtKiCgRcivopdgojcJrVwT/assets/images/optimized/rev-31cad3f/www.cozycatfurniture.com/image/siamese-cat-cover.jpg",
+                image: "https://www.cozycatfurniture.com/image/cache/siamese-cat-cover-1054x791.jpg",
                 microchip_number: "123456789012346"
             },
             {

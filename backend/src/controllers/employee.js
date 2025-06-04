@@ -69,15 +69,13 @@ export const createEmployee = async (req, res) => {
             }
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
-
         const newEmployee = await Employee.create({
             first_name,
             last_name,
             email,
             phone_number,
             role,
-            password: hashedPassword,
+            password,
         });
 
         return res.status(201).json({
