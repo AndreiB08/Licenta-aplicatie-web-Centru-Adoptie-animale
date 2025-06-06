@@ -23,7 +23,7 @@ export const NotifyRequest = sequelize.define(
             }
         },
 
-        // Reference to the animalSS
+        // Reference to the animal
         animalId: {
             type: DataTypes.UUID,
             allowNull: false,

@@ -19,6 +19,12 @@
     color: var(--color-red);
 }
 
+.image-adopted {
+    background-color: #d3d3d3;
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
 .status-reserved {
     color: var(--color-yellow);
 }

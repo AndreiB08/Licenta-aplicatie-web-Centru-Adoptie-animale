@@ -4,6 +4,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import './dashboard.css';
 import { SERVER_URL } from "../../constants/server_url";
 import '../../colors.css';
+import { ADOPTION_STATUSES } from "../../../../backend/src/constants/enums";
 
 const Dashboard = () => {
     const [stats, setStats] = useState({ total: 0, adopted: 0, available: 0, reserved: 0 });
@@ -111,7 +112,7 @@ const Dashboard = () => {
             if (!request) return;
 
             await axios.put(`${SERVER_URL}/pets/${request.animalId}`, {
-                adoption_status: "Adoptat"
+                adoption_status: ADOPTION_STATUSES.ADOPTAT
             });
 
             await axios.put(
@@ -139,7 +140,7 @@ const Dashboard = () => {
             const request = requests.find(req => req.id === id);
             if (request?.animalId) {
                 await axios.put(`${SERVER_URL}/pets/${request.animalId}`, {
-                    adoption_status: "Disponibil"
+                    adoption_status: ADOPTION_STATUSES.DISPONIBIL
                 });
 
                 await axios.post(`${SERVER_URL}/notify-requests/notify-availability`, { animalId: request.animalId }, {

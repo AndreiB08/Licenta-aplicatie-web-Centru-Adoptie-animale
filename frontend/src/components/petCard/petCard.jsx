@@ -83,7 +83,7 @@ const PetCard = ({ id, name, species, breed, age, adoption_status, image, onEdit
         >
             <CardMedia
                 sx={{ height: 220, width: "100%", objectFit: "cover", objectPosition: "top" }}
-                className={`pet-image ${adoption_status === ADOPTION_STATUSES.REZERVAT ? "image-reserved" : ""} ${getStatusClass(adoption_status)}`}
+                className={`pet-image ${adoption_status === ADOPTION_STATUSES.REZERVAT || adoption_status === ADOPTION_STATUSES.ADOPTAT ? "image-reserved" : ""} ${getStatusClass(adoption_status)}`}
                 image={image}
                 title={name}
             />
