@@ -60,7 +60,7 @@ const PetCard = ({ id, name, species, breed, age, adoption_status, image, onEdit
     };
 
     const handleDelete = async () => {
-        const confirmDelete = window.confirm(`Are you sure you want to delete "${name}"?`);
+        const confirmDelete = window.confirm(`Ești sigur că vrei să ștergi "${name}"?`);
         if (!confirmDelete) return;
 
         try {
@@ -72,7 +72,7 @@ const PetCard = ({ id, name, species, breed, age, adoption_status, image, onEdit
             window.location.reload();
         } catch (error) {
             console.error("Error deleting pet: ", error);
-            alert("An error occurred while deleting.");
+            alert("A apărut o eroare.");
         }
     };
 

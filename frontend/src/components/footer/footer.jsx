@@ -17,8 +17,8 @@ const Footer = () => {
       <ul className="footer-links">
         <li><Link to="/">Acasă</Link></li>
         <li><Link to="/pets">Animale</Link></li>
-        <li><Link to="/location">Locație</Link></li>
         <li><Link to="/about">Despre noi</Link></li>
+        <li><Link to="/location">Locație</Link></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
     </footer>

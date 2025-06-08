@@ -59,11 +59,11 @@ const Staff = () => {
             const token = localStorage.getItem("token");
 
             if (id.toString() === currentUserId?.toString()) {
-                alert("You can't delete your account.");
+                alert("Nu poți șterge propriul cont.");
                 return;
             }
 
-            const confirm = window.confirm("Are you sure you want to delete the employee?");
+            const confirm = window.confirm("Ești sigur că vrei să ștergi acest");
             if (!confirm) return;
 
             await axios.delete(`${SERVER_URL}/employees/${id}`, {

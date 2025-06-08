@@ -6,6 +6,10 @@ import {
   DialogContent,
   DialogActions,
   TextField,
+  MenuItem,
+  Select,
+  InputLabel,
+  FormControl,
   Button
 } from "@mui/material";
 import { SERVER_URL } from "../../constants/server_url";
@@ -17,6 +21,7 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
     last_name: "",
     email: "",
     phone: "",
+    role: EMPLOYEE_ROLES.ANGAJAT,
   });
 
   useEffect(() => {
@@ -26,6 +31,7 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
         last_name: employee.last_name || "",
         email: employee.email,
         phone: employee.phone_number,
+        role: employee.role || EMPLOYEE_ROLES.ANGAJAT,
       });
     } else {
       setFormData({
@@ -33,6 +39,7 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
         last_name: "",
         email: "",
         phone: "",
+        role: EMPLOYEE_ROLES.ANGAJAT,
       });
     }
   }, [employee]);
@@ -46,47 +53,65 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
     const phoneTrimmed = formData.phone.trim();
   
     if (!formData.first_name.trim()) {
-      newErrors.first_name = "The first name is required.";
+      newErrors.first_name = "Prenumele este obligatoriu.";
     }
   
     if (!formData.last_name.trim()) {
-      newErrors.last_name = "The last name is required.";
+      newErrors.last_name = "Numele este obligatoriu.";
     }
   
     if (!emailTrimmed) {
-      newErrors.email = "The email is required.";
+      newErrors.email = "Email-ul este obligatoriu.";
     } else if (!/\S+@\S+\.\S+/.test(emailTrimmed)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = "Format email invalid.";
     } else if (!/@(gmail\.com|yahoo\.com|outlook\.com)$/i.test(emailTrimmed)) {
-      newErrors.email = "Allowed domains: gmail.com, yahoo.com, outlook.com.";
+      newErrors.email = "Domain-uri acceptate: gmail.com, yahoo.com, outlook.com.";
     } else if (
       employees.some(
         (emp) => emp.email.toLowerCase() === emailTrimmed && emp.id !== employee?.id
       )
     ) {
-      newErrors.email = "This email is already in use.";
+      newErrors.email = "Email-ul există deja.";
     }
     if (!phoneTrimmed) {
-      newErrors.phone = "The phone number is required.";
+      newErrors.phone = "Numărul de telefon este obligatoriu.";
     } else if (!/^[0-9+\-\(\)\s]*$/.test(phoneTrimmed)) {
-      newErrors.phone = "The number can contain only digits, +, -, spaces, and parentheses.";
+      newErrors.phone = "Numărul de telefon poate conține doar cifre, semnul +, -, spații și paranteze.";
     } else if (phoneTrimmed.length < 10 || phoneTrimmed.length > 15) {
-      newErrors.phone = "The number must be between 10 and 15 characters long.";
+      newErrors.phone = "Numărul trebuie să înceapă cu 07 și să conțină 10-15 cifre.";
     } else if (
       employees.some(
         (emp) => emp.phone_number === phoneTrimmed && emp.id !== employee?.id
       )
     ) {
-      newErrors.phone = "This phone number is already in use.";
-    }    
-  
+      newErrors.phone = "Numărul de telefon există deja";
+    }
+    
+    if (!formData.role) {
+      newErrors.role = "Selectează un rol.";
+    }
     return newErrors;
   };  
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const { name, value } = e.target;
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
+
+const handleBlur = (e) => {
+  const { name, value } = e.target;
+
+  if (name === "first_name" || name === "last_name") {
+    const formatted = value
+      .toLowerCase()
+      .split(" ")
+      .filter(Boolean)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+    setFormData((prev) => ({ ...prev, [name]: formatted }));
+  }
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -104,9 +129,12 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
       last_name: formData.last_name.trim(),
       email: formData.email,
       phone_number: formData.phone,
-      role: employee?.role || EMPLOYEE_ROLES.ANGAJAT,
-      password: "staff1234"
+      role: formData.role,
     };
+
+    if (!employee || !employee.id) {
+      payload.password = formData.role === EMPLOYEE_ROLES.ADMIN ? "admin1234" : "staff1234";
+    }
 
     try {
       if (employee && employee.id) {
@@ -123,7 +151,7 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
         });
       }
 
-      setFormData({ first_name: "", last_name: "", email: "", phone: "" });
+      setFormData({ first_name: "", last_name: "", email: "", phone: "", role: EMPLOYEE_ROLES.ANGAJAT });
       setErrors({});
       handleClose();
       onSaved?.();
@@ -135,13 +163,14 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
 
   return (
     <Dialog open={open} onClose={() => handleClose()} fullWidth maxWidth="sm">
-      <DialogTitle>{employee ? "Edit employee" : "Add employee"}</DialogTitle>
+      <DialogTitle>{employee ? "Editează angajat" : "Adaugă angajat"}</DialogTitle>
       <DialogContent sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1, overflow: "visible" }}>
         <TextField
           label="Prenume"
           name="first_name"
           value={formData.first_name}
           onChange={handleChange}
+          onBlur={handleBlur}
           error={!!errors.first_name}
           helperText={errors.first_name}
           required
@@ -153,6 +182,7 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
           name="last_name"
           value={formData.last_name}
           onChange={handleChange}
+          onBlur={handleBlur}
           error={!!errors.last_name}
           helperText={errors.last_name}
           required
@@ -180,6 +210,24 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
           required
           fullWidth
         />
+        <FormControl fullWidth error={!!errors.role}>
+          <InputLabel id="role-label">Rol</InputLabel>
+          <Select
+            labelId="role-label"
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+            label="Rol"
+          >
+            <MenuItem value={EMPLOYEE_ROLES.ANGAJAT}>Angajat</MenuItem>
+            <MenuItem value={EMPLOYEE_ROLES.ADMIN}>Admin</MenuItem>
+          </Select>
+          {errors.role && (
+            <p style={{ color: "#d32f2f", fontSize: "0.75rem", margin: "3px 14px 0" }}>
+              {errors.role}
+            </p>
+          )}
+        </FormControl>
       </DialogContent>
       <DialogActions>
         <Button onClick={() => handleClose()}>Anulează</Button>

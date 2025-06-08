@@ -71,11 +71,11 @@ const Account = () => {
         if (!form.phone_number.trim()) {
             newErrors.phone_number = "Telefonul este obligatoriu.";
         } else if (!/^07\d{8}$/.test(form.phone_number.trim())) {
-            newErrors.phone_number = "Numărul trebuie să înceapă cu 07 și să conțină exact 10 cifre.";
+            newErrors.phone_number = "Numărul trebuie să înceapă cu 07 și să conțină 10-15 cifre.";
         }
 
-        if (form.password && form.password.length < 6) {
-            newErrors.password = "Parola trebuie să aibă cel puțin 6 caractere.";
+        if (form.password && form.password.length < 8) {
+            newErrors.password = "Parola trebuie să aibă cel puțin 8 caractere.";
         }
 
         setErrors(newErrors);

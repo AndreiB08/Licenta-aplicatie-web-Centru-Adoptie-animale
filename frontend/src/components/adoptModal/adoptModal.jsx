@@ -42,7 +42,7 @@ const AdoptModal = ({ open, setOpen, animalId, notifyOnly = false }) => {
             const emailDomain = formData.adopter_email.split("@")[1]?.toLowerCase();
 
             if (!allowedDomains.includes(emailDomain)) {
-                newErrors.adopter_email = "Te rugăm să folosești un provider valid precum gmail, yahoo sau outlook.";
+                newErrors.adopter_email = "Te rugăm să folosești un provider valid precum gmail.com, yahoo.com sau outlook.com.";
             }
         }
 

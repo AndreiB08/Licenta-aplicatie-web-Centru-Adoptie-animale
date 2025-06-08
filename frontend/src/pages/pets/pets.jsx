@@ -82,7 +82,7 @@ const Pets = () => {
     return (
         <div className="page">
             <h3 className="title">
-                {isAuthenticated ? "Toate animalele" : "Disponibile pentru adopție"}
+                {isAuthenticated ? "Toate animalele" : "Animalele din centru"}
             </h3>
 
             {isAuthenticated && (
