@@ -1,5 +1,5 @@
 # Baza de date
-.storage.db
+storage.db
 
 # Variabile de mediu
 .env
