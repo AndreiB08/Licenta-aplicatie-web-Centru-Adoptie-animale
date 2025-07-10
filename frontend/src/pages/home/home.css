@@ -57,6 +57,11 @@
     text-decoration: underline;
 }
 
+.info {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .floating-chat-button {
     position: fixed;
     bottom: 24px;

@@ -74,7 +74,7 @@ const Contact = () => {
         <div className="page contact-container">
             <Typography variant="h4" className="titlu contact-title">Contactează-ne</Typography>
             <Typography className="contact-description">
-                Ne-ar face plăcere să auzim de la tine! Fie că ai întrebări, sugestii sau vrei să ne susții, nu ezita să ne scrii.
+                Ne-ar face plăcere să îți auzim părerea! Fie că ai întrebări, sugestii sau vrei să ne susții, nu ezita să ne scrii.
             </Typography>
 
             <Box component="form" className="contact-form" onSubmit={handleSubmit} noValidate>
@@ -114,8 +114,8 @@ const Contact = () => {
             </Box>
 
             <div className="contact-info">
-                <p><strong>📍 Adresă:</strong> Piața Unirii, București, Romania</p>
-                <p><strong>📞 Program:</strong> +40 123 456 789</p>
+                <p><strong>📍 Adresă:</strong> Drumul Lunca Jariștei, București</p>
+                <p><strong>📞 Program:</strong> +40 700 426 841</p>
                 <p><strong>✉️ Email:</strong> contact@centruadoptie.ro</p>
             </div>
         </div>

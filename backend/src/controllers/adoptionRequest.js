@@ -38,18 +38,18 @@ export const addAdoptionRequest = async (req, res) => {
 
         const existingRequests = await AdoptionRequest.count({
             where: {
-              adopter_first_name: adopter_first_name.trim(),
-              adopter_last_name: adopter_last_name.trim(),
-              adopter_email: adopter_email.trim().toLowerCase(),
-              approved: false,
+                adopter_first_name: adopter_first_name.trim(),
+                adopter_last_name: adopter_last_name.trim(),
+                adopter_email: adopter_email.trim().toLowerCase(),
+                approved: false,
             }
-          });
-          
-          if (existingRequests >= 5) {
+        });
+
+        if (existingRequests >= 5) {
             return res.status(400).json({
-              message: "Nu poți avea mai mult de 5 cereri de adopție în așteptare.",
+                message: "Nu poți avea mai mult de 5 cereri de adopție în așteptare.",
             });
-          }
+        }
 
         const newRequest = await AdoptionRequest.create({
             adopter_first_name,

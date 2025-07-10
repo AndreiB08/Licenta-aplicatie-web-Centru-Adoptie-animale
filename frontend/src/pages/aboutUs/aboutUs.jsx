@@ -60,27 +60,32 @@ const About = () => {
                     <div className="section" id="rescue">
                         <h2>🐾 Salvare</h2>
                         <div className="section-content">
-                            <img src={rescue} alt="Rescue" />
-                            <p>În fiecare zi, echipa noastră răspunde apelurilor despre animale aflate în pericol. Fie că sunt abandonate, rănite sau victime ale abuzului, intervenim pentru a le oferi ajutor imediat. Salvarea înseamnă mai mult decât relocare, înseamnă acțiune rapidă, empatie și șansa la o viață sigură. Vehiculele noastre de intervenție și personalul pregătit sunt gata să acționeze oriunde este nevoie.</p>
+                            <div className="info">
+                                <div className="section-content">
+                                    <img src={rescue} alt="Rescue" />
+                                    <p>În fiecare zi, echipa noastră răspunde apelurilor despre animale aflate în pericol. Fie că sunt abandonate, rănite sau victime ale abuzului, intervenim pentru a le oferi ajutor imediat. Salvarea înseamnă mai mult decât relocare, înseamnă acțiune rapidă, empatie și șansa la o viață sigură. Vehiculele noastre de intervenție și personalul pregătit sunt gata să acționeze oriunde este nevoie.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div className="statistics">
                     <div className="stat-box">
                         <h3>+{Math.floor(stats.animalsRescued / 5) * 5}</h3>
-                        <p>Animale Salvate</p>
+                        <p>Animale salvate</p>
                     </div>
                     <div className="stat-box">
                         <h3>+{Math.floor(stats.animalsAdopted / 5) * 5}</h3>
-                        <p>Animale Adoptate</p>
+                        <p>Animale adoptate</p>
                     </div>
                     <div className="stat-box">
                         <h3>+{Math.floor(stats.medicalTreatments / 5) * 5}</h3>
-                        <p>Tratamente Medicale</p>
+                        <p>Tratamente medicale</p>
                     </div>
                     <div className="stat-box">
                         <h3>+{Math.floor(stats.educationalEvents / 5) * 5}</h3>
-                        <p>Evenimente Educaționale</p>
+                        <p>Evenimente educaționale</p>
                     </div>
                 </div>
             </div>

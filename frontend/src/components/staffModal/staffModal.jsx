@@ -98,21 +98,6 @@ const StaffModal = ({ open, handleClose, employee = null, onSaved, employees = [
   setFormData((prev) => ({ ...prev, [name]: value }));
 };
 
-const handleBlur = (e) => {
-  const { name, value } = e.target;
-
-  if (name === "first_name" || name === "last_name") {
-    const formatted = value
-      .toLowerCase()
-      .split(" ")
-      .filter(Boolean)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-
-    setFormData((prev) => ({ ...prev, [name]: formatted }));
-  }
-};
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -170,7 +155,6 @@ const handleBlur = (e) => {
           name="first_name"
           value={formData.first_name}
           onChange={handleChange}
-          onBlur={handleBlur}
           error={!!errors.first_name}
           helperText={errors.first_name}
           required
@@ -182,7 +166,6 @@ const handleBlur = (e) => {
           name="last_name"
           value={formData.last_name}
           onChange={handleChange}
-          onBlur={handleBlur}
           error={!!errors.last_name}
           helperText={errors.last_name}
           required

@@ -17,6 +17,15 @@
 
 }
 
+.about-hero {
+    margin-left: 450px;
+}
+
+#rescue h2 {
+    margin-left: 450px;
+    text-align: center;
+}
+
 .intro-section {
     display: flex;
     flex-wrap: wrap;

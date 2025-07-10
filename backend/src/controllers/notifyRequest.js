@@ -57,10 +57,11 @@ export const notifyAvailability = async (req, res) => {
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASS,
-      }
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
-
-
 
     for (const notify of notifyList) {
       const mailOptions = {

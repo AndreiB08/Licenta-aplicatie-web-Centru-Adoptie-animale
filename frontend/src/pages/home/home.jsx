@@ -35,7 +35,6 @@ const Home = () => {
 
 			<div className="content-inceput">
 				<div className="info">
-					<p>În fiecare an, mii de animale ajung în adăposturi din cauza concepțiilor greșite sau a abandonului. Animalele de rasă mixtă sunt adesea mai rezistente, mai sănătoase și se adaptează mai ușor decât cele de rasă pură. Ele se obișnuiesc rapid cu noile medii, dovedind loialitate și afecțiune față de noii stăpâni. Mulți oameni tind să creadă că animalele de rasă pură sunt superioare, însă cele de rasă mixtă aduc, de cele mai multe ori, numeroase avantaje, precum o imunitate mai puternică, un temperament echilibrat și o capacitate impresionantă de adaptare la medii și situații de viață diverse.</p><br />
 					<p>Adăpostul nostru este dedicat salvării și îngrijirii animalelor abandonate, rănite sau abuzate, indiferent de specie. Credem că fiecare animal merită o șansă la o viață mai bună, iar noi facem tot ce ne stă în putință pentru a le oferi dragoste, grijă și atenție. În prezent, găzduim sute de animale din specii diferite, inclusiv câini, pisici, iepuri, păsări și alte animale domestice, și lucrăm constant pentru a le asigura condiții excelente, tratament medical specializat și oportunități reale pentru adopții responsabile. Echipa noastră dedicată este formată din profesioniști și voluntari pasionați, care se străduiesc să ajute animalele să se refacă atât fizic, cât și emoțional.</p>
 				</div>
 
@@ -44,8 +43,8 @@ const Home = () => {
 						modules={[Autoplay]}
 						spaceBetween={0}
 						slidesPerView={1}
-						autoplay={{ delay: 4000 }}
-						speed={4000}
+						autoplay={{ delay: 2000 }}
+						speed={3000}
 						loop={true}
 						allowTouchMove={false}
 						navigation={false}
