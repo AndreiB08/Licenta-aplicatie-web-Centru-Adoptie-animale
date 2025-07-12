@@ -204,7 +204,6 @@ const Staff = () => {
                 </Button>
             </div>
 
-
             {filtered.length === 0 ? (
                 <p>Nu s-au găsit angajați care să îndeplinească criteriile.</p>
             ) : (
@@ -243,21 +242,12 @@ const Staff = () => {
                     </table>
 
                     {totalPages > 1 && (
-                        <div className="pagination">
-                            {[...Array(totalPages)].map((_, i) => (
-                                <button
-                                    key={i + 1}
-                                    className={page === i + 1 ? "page-btn active" : "page-btn"}
-                                    onClick={() => setPage(i + 1)}
-                                >
-                                    {i + 1}
-                                </button>
-                            ))}
+                        <div style={{ marginTop: 30, display: "flex", justifyContent: "center" }}>
+                            <Pagination count={totalPages} page={page} onChange={(_, value) => setPage(value)} color="primary" />
                         </div>
                     )}
                 </>
             )}
-
             <StaffModal
                 open={openModal}
                 handleClose={closeEditModal}

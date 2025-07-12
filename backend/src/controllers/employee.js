@@ -52,16 +52,16 @@ export const createEmployee = async (req, res) => {
         }
 
         if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-            return res.status(400).json({ message: "Email is invalid or missing." });
+            return res.status(400).json({ message: "Email invalid sau lipsește." });
         } else {
             const existing = await Employee.findOne({ where: { email } });
             if (existing) {
-                return res.status(400).json({ message: "Email is already in use." });
+                return res.status(400).json({ message: "Email este deja folosit." });
             }
         }
 
         if (!phone_number || phone_number.trim().length < 10) {
-            return res.status(400).json({ message: "Phone number is invalid or missing." });
+            return res.status(400).json({ message: "Număr de telefon invalid sau lipsește." });
         } else {
             const existingPhone = await Employee.findOne({ where: { phone_number } });
             if (existingPhone) {
@@ -119,7 +119,7 @@ export const updateEmployee = async (req, res) => {
       if (email && email !== employee.email) {
         const existing = await Employee.findOne({ where: { email } });
         if (existing && existing.id !== employee.id) {
-          return res.status(400).json({ message: "Email is already used by another account." });
+          return res.status(400).json({ message: "Email-ul este deja folosit de alt utilizator." });
         }
         employee.email = email.trim();
       }

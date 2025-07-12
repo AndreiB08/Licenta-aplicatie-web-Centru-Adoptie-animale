@@ -10,11 +10,7 @@ export const getStatistics = async (req, res) => {
     });
 
     const treatedAnimals = await Animal.count({
-      where: {
-        health_status: {
-          [Op.ne]: "Sănătos",
-        },
-      },
+      where: { health_status: "Sănătos" },
     });
 
     res.json({

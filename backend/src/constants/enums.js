@@ -1,10 +1,8 @@
-// Employees enums
 export const EMPLOYEE_ROLES = {
     ADMIN: "Admin",
     ANGAJAT: "Angajat",
 };
 
-// Animals enums
 export const SPECIES = {
     CÂINE: "Câine",
     PISICĂ: "Pisică",
