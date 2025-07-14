@@ -46,7 +46,8 @@ const Dashboard = () => {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     },
                 });
-                setMessages(res.data);
+                const sortedMessages = res.data.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+                setMessages(sortedMessages);
             } catch (error) {
                 console.error("Failed to fetch contact messages:", error);
             }
