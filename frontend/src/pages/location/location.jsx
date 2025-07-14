@@ -11,7 +11,7 @@ const LocationPage = () => {
       <div className="location-details">
         <p><strong>📍 Adresă:</strong> Drumul Lunca Jariștei, București</p>
         <p><strong>🕒 Program:</strong> Lu-Vi: 10:00 - 18:00</p>
-        <p><strong>📞 Program:</strong> +40 700 426 841</p>
+        <p><strong>📞 Număr telefon:</strong> +40 700 426 841</p>
       </div>
       <div className="map-container">
         <iframe
