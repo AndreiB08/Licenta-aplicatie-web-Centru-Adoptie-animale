@@ -15,29 +15,13 @@ export const seedEmployees = async () => {
       role: EMPLOYEE_ROLES.ADMIN,
     },
     {
-      first_name: "Vlăduț",
-      last_name: "Alexa",
-      email: "vladut.alexa@gmail.com",
+      first_name: "Andrei2",
+      last_name: "Buzagiu",
+      email: "andrei2.buzagiu@gmail.com",
       phone_number: "0742369855",
       password: "staff1234",
       role: EMPLOYEE_ROLES.ANGAJAT,
-    },
-    {
-      first_name: "Alina Cristina",
-      last_name: "Constantin",
-      email: "alina.constantin@gmail.com",
-      phone_number: "0711257899",
-      password: "staff1234",
-      role: EMPLOYEE_ROLES.ANGAJAT,
-    },
-    {
-      first_name: "Gabriel",
-      last_name: "Truică",
-      email: "gabriel.truica@gmail.com",
-      phone_number: "0788745366",
-      password: "staff1234",
-      role: EMPLOYEE_ROLES.ANGAJAT,
-    },
+    }
   ];
 
   await Employee.bulkCreate(employees, { individualHooks: true });

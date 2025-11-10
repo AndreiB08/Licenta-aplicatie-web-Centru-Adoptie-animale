@@ -81,7 +81,7 @@ email: andrei.buzagiu@gmail.com
 parola: admin1234
 
 Staff:
-email: vladut.alexa@gmail.com
+email: andrei2.buzagiu@gmail.com
 parola: staff1234
 ```
 
